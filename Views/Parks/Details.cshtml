@@ -1,0 +1,74 @@
+﻿@model ParkingManagementSys.Models.Park
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Vechical Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CoustName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoustName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VechicalNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VechicalNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParkingArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParkingArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SlotNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlotNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnterTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnterTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExitTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExitTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CoustID }, new { @class = "btn btn-primary" }) 
+    @Html.ActionLink("Back to List", "Index")
+</p>
