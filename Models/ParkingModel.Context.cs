@@ -13,10 +13,10 @@ namespace ParkingManagementSys.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ParkingManagmentEntities : DbContext
+    public partial class ParkingEntities : DbContext
     {
-        public ParkingManagmentEntities()
-            : base("name=ParkingManagmentEntities")
+        public ParkingEntities()
+            : base("name=ParkingEntities")
         {
         }
     
@@ -25,7 +25,6 @@ namespace ParkingManagementSys.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admin> Admins { get; set; }
-        public virtual DbSet<Park> Parks { get; set; }
+        public virtual DbSet<Coustmer> Coustmers { get; set; }
     }
 }

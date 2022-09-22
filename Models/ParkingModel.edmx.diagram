@@ -4,9 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="14c6c38785034ecc8e569e72f195a3e4" Name="Diagram1">
-        <EntityTypeShape EntityType="ParkingManagmentModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ParkingManagmentModel.Park" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="1aead12dc2924a2bbd2802fb8964e8df" Name="Diagram1">
+        <EntityTypeShape EntityType="ParkingManageModel1.Coustmer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

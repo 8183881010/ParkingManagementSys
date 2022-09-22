@@ -1,20 +1,22 @@
-﻿@model ParkingManagementSys.Models.Park
+﻿@model ParkingManagementSys.Models.Coustmer
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 
-<h2>Add Vechical</h2>
+<h2>Edit Details</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        
+       
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CoustID)
+
         <div class="form-group">
             @Html.LabelFor(model => model.CoustName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -48,10 +50,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SlotNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SlotNO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SlotNo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SlotNo, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SlotNO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SlotNO, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -73,7 +75,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </div>
     </div>

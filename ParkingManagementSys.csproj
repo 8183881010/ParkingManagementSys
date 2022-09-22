@@ -130,33 +130,49 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoustmersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ParksController.cs" />
+    <Compile Include="DBModel\Admin.cs">
+      <DependentUpon>UserDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\UserDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\UserDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\UserDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDBModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Admin.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\Coustmer.cs">
+      <DependentUpon>ParkingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\Model1.Context.cs">
+    <Compile Include="Models\ParkingModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>ParkingModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.cs">
+    <Compile Include="Models\ParkingModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ParkingModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
+    <Compile Include="Models\ParkingModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>ParkingModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Park.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -164,28 +180,45 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DBModel\UserDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserDBModel.edmx</DependentUpon>
+      <LastGenOutput>UserDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBModel\UserDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserDBModel.edmx</DependentUpon>
+      <LastGenOutput>UserDBModel.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\ParkingModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>ParkingModel.edmx</DependentUpon>
+      <LastGenOutput>ParkingModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\ParkingModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>ParkingModel.edmx</DependentUpon>
+      <LastGenOutput>ParkingModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="DBModel\UserDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>UserDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="DBModel\UserDBModel.edmx.diagram">
+      <DependentUpon>UserDBModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ParkingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ParkingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ParkingModel.edmx.diagram">
+      <DependentUpon>ParkingModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -212,14 +245,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Parks\Create.cshtml" />
-    <Content Include="Views\Parks\Delete.cshtml" />
-    <Content Include="Views\Parks\Details.cshtml" />
-    <Content Include="Views\Parks\Edit.cshtml" />
-    <Content Include="Views\Parks\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_loginPartial.cshtml" />
+    <Content Include="Views\Coustmers\Create.cshtml" />
+    <Content Include="Views\Coustmers\Delete.cshtml" />
+    <Content Include="Views\Coustmers\Details.cshtml" />
+    <Content Include="Views\Coustmers\Edit.cshtml" />
+    <Content Include="Views\Coustmers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

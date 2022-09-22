@@ -7,20 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ParkingManagementSys.Models
+namespace ParkingManagementSys.DBModel
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Park
+    public partial class Admin
     {
-        public int CoustID { get; set; }
-        public string CoustName { get; set; }
-        public string VechicalNO { get; set; }
-        public string MobileNO { get; set; }
-        public string ParkingArea { get; set; }
-        public int SlotNo { get; set; }
-        public string EnterTime { get; set; }
-        public string ExitTime { get; set; }
+        public int AdminID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailID { get; set; }
+        public string Password { get; set; }
     }
 }

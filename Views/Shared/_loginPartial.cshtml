@@ -17,10 +17,20 @@ else
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Hii!"+Session["EmailId"], "Index", "Home", null, null)
+            @Html.ActionLink("Hii! "+Session["EmailId"], "Index", "Home", null, null)
         </li>
+
         <li>
             @Html.ActionLink("Logout", "Logout", "Account", null, null)
         </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            
+        @Html.ActionLink("Vechical Master", "Index", "Coustmers")
+        </li>
+
+
     </ul>
 }

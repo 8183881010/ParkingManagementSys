@@ -12,18 +12,18 @@
         <table>
             <tr>
                 <td>
-                    @Html.LabelFor(model => model.EmailId)
+                    @Html.LabelFor(model => model.EmailID)
                 </td>
 
                 <td>
-                    @Html.TextBoxFor(model => model.EmailId)
+                    @Html.TextBoxFor(model => model.EmailID)
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
 
-                    @Html.ValidationMessageFor(model => model.EmailId, null, new { @class = "text text-danger" })
+                    @Html.ValidationMessageFor(model => model.EmailID, null, new { @class = "text text-danger" })
                 </td>
             </tr>
 
@@ -52,11 +52,11 @@
                     <table>
                         <tr>
                             <td>
-                                <input type="Submit" value="Login" />
+                                <input type="Submit" value="Login" class="btn btn-success" />
 
                             </td>
                             <td>
-                                <input type="reset" value="Reset" />
+                                <input type="reset" value="Reset" class="btn btn-primary"/>
                             </td>
                         </tr>
 

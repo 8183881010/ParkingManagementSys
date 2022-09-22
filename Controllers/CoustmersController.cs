@@ -10,107 +10,107 @@ using ParkingManagementSys.Models;
 
 namespace ParkingManagementSys.Controllers
 {
-    public class ParksController : Controller
+    public class CoustmersController : Controller
     {
-        private ParkingManagmentEntities db = new ParkingManagmentEntities();
+        private ParkingEntities db = new ParkingEntities();
 
-        // GET: Parks
+        // GET: Coustmers
         public ActionResult Index()
         {
-            return View(db.Parks.ToList());
+            return View(db.Coustmers.ToList());
         }
 
-        // GET: Parks/Details/5
+        // GET: Coustmers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Park park = db.Parks.Find(id);
-            if (park == null)
+            Coustmer coustmer = db.Coustmers.Find(id);
+            if (coustmer == null)
             {
                 return HttpNotFound();
             }
-            return View(park);
+            return View(coustmer);
         }
 
-        // GET: Parks/Create
+        // GET: Coustmers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Parks/Create
+        // POST: Coustmers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CoustID,CoustName,VechicalNO,MobileNO,ParkingArea,SlotNo,EnterTime,ExitTime")] Park park)
+        public ActionResult Create([Bind(Include = "CoustID,CoustName,VechicalNO,MobileNO,ParkingArea,SlotNO,EnterTime,ExitTime")] Coustmer coustmer)
         {
             if (ModelState.IsValid)
             {
-                db.Parks.Add(park);
+                db.Coustmers.Add(coustmer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(park);
+            return View(coustmer);
         }
 
-        // GET: Parks/Edit/5
+        // GET: Coustmers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Park park = db.Parks.Find(id);
-            if (park == null)
+            Coustmer coustmer = db.Coustmers.Find(id);
+            if (coustmer == null)
             {
                 return HttpNotFound();
             }
-            return View(park);
+            return View(coustmer);
         }
 
-        // POST: Parks/Edit/5
+        // POST: Coustmers/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CoustID,CoustName,VechicalNO,MobileNO,ParkingArea,SlotNo,EnterTime,ExitTime")] Park park)
+        public ActionResult Edit([Bind(Include = "CoustID,CoustName,VechicalNO,MobileNO,ParkingArea,SlotNO,EnterTime,ExitTime")] Coustmer coustmer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(park).State = EntityState.Modified;
+                db.Entry(coustmer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(park);
+            return View(coustmer);
         }
 
-        // GET: Parks/Delete/5
+        // GET: Coustmers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Park park = db.Parks.Find(id);
-            if (park == null)
+            Coustmer coustmer = db.Coustmers.Find(id);
+            if (coustmer == null)
             {
                 return HttpNotFound();
             }
-            return View(park);
+            return View(coustmer);
         }
 
-        // POST: Parks/Delete/5
+        // POST: Coustmers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Park park = db.Parks.Find(id);
-            db.Parks.Remove(park);
+            Coustmer coustmer = db.Coustmers.Find(id);
+            db.Coustmers.Remove(coustmer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

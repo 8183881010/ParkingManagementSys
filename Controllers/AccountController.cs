@@ -1,4 +1,5 @@
-﻿using ParkingManagementSys.Models;
+﻿using ParkingManagementSys.DBModel;
+using ParkingManagementSys.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,11 @@ using System.Web.Mvc;
 
 namespace ParkingManagementSys.Controllers
 {
+    
     public class AccountController : Controller
     {
-        ParkingManagmentEntities db = new ParkingManagmentEntities();
+        ParkingManageEntities parking = new ParkingManageEntities();
+        // GET: Acc
         public ActionResult Index()
         {
             return View();
@@ -17,24 +20,24 @@ namespace ParkingManagementSys.Controllers
 
         public ActionResult Register()
         {
-            Admin user = new Admin();
+            UserModel user = new UserModel();
             return View();
         }
         [HttpPost]
-        public ActionResult Register(Admin user)
+        public ActionResult Register(UserModel user)
         {
             if (ModelState.IsValid)
             {
-                if (!db.Admins.Any(m => m.EmailId== user.EmailId))
+                if (!parking.Admins.Any(m => m.EmailID== user.EmailID))
                 {
-                    Admin objUser = new Models.Admin();
+                    Admin objUser = new DBModel.Admin();
                     objUser.FirstName = user.FirstName;
                     objUser.LastName = user.LastName;
                     objUser.Password=user.Password;
-                    objUser.EmailId= user.EmailId;
-                    db.Admins.Add(objUser);
-                    db.SaveChanges();
-                    user= new Admin();
+                    objUser.EmailID= user.EmailID;
+                    parking.Admins.Add(objUser);
+                    parking.SaveChanges();
+                    user= new UserModel();
                     user.SuccessMessage="Admin is Sucessfully Registerd";
                     return RedirectToAction("Index", "Home");
                 }
@@ -57,14 +60,14 @@ namespace ParkingManagementSys.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (db.Admins.Where(m => m.EmailId== objLoginModel.EmailId && m.Password==objLoginModel.Password).FirstOrDefault() == null)
+                if (parking.Admins.Where(m => m.EmailID== objLoginModel.EmailID && m.Password==objLoginModel.Password).FirstOrDefault() == null)
                 {
                     ModelState.AddModelError("Error", "Invalid EmailID And Password");
                     return View();
                 }
                 else
                 {
-                    Session["EmailId"]=objLoginModel.EmailId;
+                    Session["EmailID"]=objLoginModel.EmailID;
                     return RedirectToAction("Index", "Home");
                 }
             }

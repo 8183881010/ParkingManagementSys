@@ -1,4 +1,4 @@
-﻿@model ParkingManagementSys.Models.Admin
+﻿@model ParkingManagementSys.Models.UserModel
 @{
     ViewBag.Title = "Register";
 }
@@ -45,11 +45,11 @@
 
             <tr>
                 <td>
-                    @Html.LabelFor(model => model.EmailId)
+                    @Html.LabelFor(model => model.EmailID)
                 </td>
 
                 <td>
-                    @Html.TextBoxFor(model => model.EmailId)
+                    @Html.TextBoxFor(model => model.EmailID)
                 </td>
             </tr>
 
@@ -57,7 +57,7 @@
             <td></td>
             <td>
 
-                @Html.ValidationMessageFor(model => model.EmailId, null, new { @class = "text text-danger" })
+                @Html.ValidationMessageFor(model => model.EmailID, null, new { @class = "text text-danger" })
             </td>
             <tr>
 
@@ -102,10 +102,15 @@
                     <table>
                         <tr>
                             <td>
-                                <input type="submit" value="Register" />
+                                <input type="submit" value="Register" class="btn btn-success"/>
                             </td>
                             <td>
-                                <input type="Reset" value="Reset" />
+                                
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <input type="Reset" value="Reset" class="btn btn-primary"/>
                             </td>
                         </tr>
 

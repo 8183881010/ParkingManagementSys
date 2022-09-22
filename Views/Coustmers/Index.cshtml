@@ -1,15 +1,15 @@
-﻿@model IEnumerable<ParkingManagementSys.Models.Park>
+﻿@model IEnumerable<ParkingManagementSys.Models.Coustmer>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2></h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add Coustmer", "Create", null, new {@class ="btn btn-primary"})
 </p>
-<table class="table">
+<table class="table table-hover table-responsive">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CoustName)
@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.ParkingArea)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SlotNo)
+            @Html.DisplayNameFor(model => model.SlotNO)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EnterTime)
@@ -50,7 +50,7 @@
             @Html.DisplayFor(modelItem => item.ParkingArea)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SlotNo)
+            @Html.DisplayFor(modelItem => item.SlotNO)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EnterTime)
@@ -59,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.ExitTime)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CoustID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CoustID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CoustID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CoustID }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Details", "Details", new { id=item.CoustID }, new { @class = "btn btn-success" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.CoustID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

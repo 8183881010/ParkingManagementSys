@@ -9,11 +9,13 @@ namespace ParkingManagementSys.Models
     public class LoginModel
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email is required")]
-        public string EmailId { get; set; }
+        [Display(Name = " Email ID : ")]
+        public string EmailID { get; set; }
 
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
+        [Display(Name = " Password : ")]
         public string Password { get; set; }
     }
 }
