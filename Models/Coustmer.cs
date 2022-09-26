@@ -19,6 +19,7 @@ namespace ParkingManagementSys.Models
         public int CoustID { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Coustmer Name is required*")]
+        [StringLength(20,ErrorMessage ="Name not be Exceed")]
         [Display (Name ="Coustmer Name:")]
         public string CoustName { get; set; }
 
@@ -28,7 +29,7 @@ namespace ParkingManagementSys.Models
         public string VechicalNO { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Mobile  No is required*")]
-
+        [RegularExpression(@"\+91[0-9]{10}", ErrorMessage = "Invalid mobile no*")]
         [Display(Name = "Mobile NO:")]
         public string MobileNO { get; set; }
         

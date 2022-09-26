@@ -12,20 +12,28 @@ namespace ParkingManagementSys.Models
         public int AdminID { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "First Name is required")]
+        [StringLength(10, ErrorMessage = "Name not be Exceed")]
         [Display(Name = " First Name: ")]
         public string FirstName { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Last Name is required")]
+        [StringLength(10, ErrorMessage = "Name not be Exceed")]
         [Display(Name = " Last Name: ")]
         public string LastName { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email is required")]
+
+        [DataType(DataType.EmailAddress)]
         [Display(Name = " Email ID: ")]
         public string EmailID { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password  is required")]
+
         [Display(Name = " Password: ")]
         [DataType(DataType.Password)]
+        [StringLength(10, MinimumLength = 6, ErrorMessage = "The length Should be between 6 to 10 Charaters.")]
+        [RegularExpression("[A-Za-z0-9],{6,10}", ErrorMessage = "Password should have atleast one number,one lowercase letter,one Uppercase letter.")]
+        
 
         public string Password { get; set; }
 
